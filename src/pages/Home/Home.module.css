@@ -1,6 +1,15 @@
-.Eduwrapper {
+.wrapper .Eduwrapper {
   width: 100%;
 }
-.Eduwrapper span {
+.wrapper .Eduwrapper .ignoresss {
   height: 40px;
+  width: 1920px;
+}
+.wrapper .Eduwrapper .sps {
+  width: 200px;
+}
+.wrapper .ppp .sps {
+  background: #f00;
+  width: 100px;
+  z-index: 9;
 }
