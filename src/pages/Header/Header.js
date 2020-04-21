@@ -1,5 +1,6 @@
 import React, { useState,useEffect,useMemo,useContext} from 'react'
 import MiddleContest from '@/pages/Home/contest'  //中间件  多层级传值
+import store from '@/store/store'
 
 const ModelHeader = ({name,count,toFun}) =>{
     const [list,setList] = useState([])
@@ -14,10 +15,12 @@ const ModelHeader = ({name,count,toFun}) =>{
     const Todata = () =>{   
         toFun('子组件传递的值')
     }
+    
     return(
         <header className="Eduwrapper">
             <ul>
                 {counts}
+                {store.getState().reducer1}
                 父组件传递次数{count}
                 {actionName}
                 <button onClick={Todata}>子传递父组件值</button>

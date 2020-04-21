@@ -3,7 +3,10 @@ import style from './Home.module.css'
 import ModelHeader from '@/pages/Header/Header'
 import MiddleContest from './contest'
 import Form  from './form'
-
+import store from '@/store/store'
+import {Route,Link} from 'react-router-dom'
+import News from '@/pages/News/index'
+import Footer from '@/pages/Footer/index'
 
 const ModelHome = () =>{
     const [p1,setp1] = useState('hello')
@@ -18,8 +21,7 @@ const ModelHome = () =>{
     },[])
     const click1 = () =>{
         setp1('你好')
-        console.log(data);
-        
+        store.dispatch({type: 'add'})   
     }
     const click2 = () =>{
         setp2('llk')
@@ -33,8 +35,21 @@ const ModelHome = () =>{
     }
     return(
         <div className={style.wrapper}>
+             {store.getState().reducer1}
              <MiddleContest.Provider value={isLogin}>
-                <div className={style.Eduwrapper}>
+                    <ul style={{margin:'50px'}}>
+                        <li >
+                            <Link to="/">News</Link>
+                            <Link to="/footer">Footer</Link>
+                        </li>
+                    </ul>
+                    <Route path="/" exact component={News}></Route>
+                    <Route path="/footer" component={Footer}></Route>
+                 {/*******
+                  * 
+                  * 
+                * ******/}
+                <div className={style.Eduwrapper}  >
                     <div onClick={click2} className={style.ignoresss}>1</div>
                     <span className={style.sps}>{count}</span>
                     <button onClick={() =>(setCount(count+1),setisLogin('register'))}>点击</button>
