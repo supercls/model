@@ -1,7 +1,7 @@
 import React, {useEffect,useState } from 'react'
 import { withRouter,Route,Link} from 'react-router-dom'  //链接router与组件之间联系
-import News from '@/pages/News/index'
-import Footer from '@/pages/Footer/index'
+// import News from '@/pages/News/index'
+// import Footer from '@/pages/Footer/index'
 
 
 const Form = ({data,cha,...rest}) =>{
@@ -29,15 +29,10 @@ const Form = ({data,cha,...rest}) =>{
             <ul>
                 <ul style={{margin:'50px'}}>
                         <li >
-                            <Link to="/sss/o">tyrtyrt</Link>
+                            <Link to="/">tyrtyrt</Link>
                             <Link to="/gos">Fofghghghoter</Link>
                         </li>
                     </ul>
-                    <Route path="/sss"  component={News}>
-                    <Route path="/sss/o"  component={Footer}>
-                        </Route>
-                    </Route>
-                    <Route path="/gos" component={Footer}></Route>
                 <li>
                     <input type="text" value={obj.value1 ||''} onChange={(e) =>getChange(e,'value1') }/>
                 </li>

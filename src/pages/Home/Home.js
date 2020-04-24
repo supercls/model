@@ -4,11 +4,16 @@ import ModelHeader from '@/pages/Header/Header'
 import MiddleContest from './contest'
 import Form  from './form'
 import store from '@/store/store'
-import {Route,Link} from 'react-router-dom'
-import News from '@/pages/News/index'
-import Footer from '@/pages/Footer/index'
+// import {Route,Link} from 'react-router-dom'
+// import News from '@/pages/News/index'
+// import Footer from '@/pages/Footer/index'
+import { connect } from "react-redux";
+import { add, reduce, asyncAdd } from "../../store/action"
 
-const ModelHome = () =>{
+const mapStateToProps = state => ({ datasp: state.reducer1 });
+const mapDispatchToProps = { add, reduce, asyncAdd };
+
+const ModelHome = ({asyncAdd,datasp}) =>{
     const [p1,setp1] = useState('hello')
     const [p2,setp2] = useState('pos')
     const [count,setCount] = useState(0)
@@ -21,7 +26,10 @@ const ModelHome = () =>{
     },[])
     const click1 = () =>{
         setp1('你好')
-        store.dispatch({type: 'add'})   
+        asyncAdd()
+        console.log(add);
+        
+        //store.dispatch({type: 'add'})   
     }
     const click2 = () =>{
         setp2('llk')
@@ -35,16 +43,17 @@ const ModelHome = () =>{
     }
     return(
         <div className={style.wrapper}>
+            {datasp}
              {store.getState().reducer1}
              <MiddleContest.Provider value={isLogin}>
-                    <ul style={{margin:'50px'}}>
+                    {/* <ul style={{margin:'50px'}}>
                         <li >
                             <Link to="/">News</Link>
                             <Link to="/footer">Footer</Link>
                         </li>
                     </ul>
                     <Route path="/" exact component={News}></Route>
-                    <Route path="/footer" component={Footer}></Route>
+                    <Route path="/footer" component={Footer}></Route> */}
                  {/*******
                   * 
                   * 
@@ -70,4 +79,4 @@ const ModelHome = () =>{
     )
 }
 
-export default ModelHome
+export default connect(mapStateToProps,mapDispatchToProps)(ModelHome)
