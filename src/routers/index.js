@@ -4,6 +4,7 @@ import Footer from '@/pages/Footer/index'
 import login from '@/pages/login/index'
 import test from '@/pages/Home/Home'
 import NotFound from '@/pages/NoFound/index'
+import Fox from '@/pages/Form/index'
 let routes = [
     {
         path: '/test',
@@ -25,6 +26,15 @@ let routes = [
       path: '/user',
       free:true,
       component: login,
+      exact:true,
+      meta:{
+        title:'Form'
+      }
+    },
+    {
+      path: '/Form',
+      free:true,
+      component: Fox,
       exact:true,
       meta:{
         title:'Form'

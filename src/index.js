@@ -8,13 +8,17 @@ import { Provider } from 'react-redux'
 import {HashRouter as Router,Switch,Route,Redirect} from 'react-router-dom'
 import routes from '@/routers/index'
 import RouterView from  '@/routers/routers'
+import ErrorBoundary from '@/component/Error'  //异常边接，捕获
+
 
 const render = ()=>{
   ReactDOM.render(
     <Provider store={store}>
-       <Router>
-        <RouterView routes={routes}></RouterView>
-      </Router>
+      <ErrorBoundary>
+        <Router>
+          <RouterView routes={routes}></RouterView>
+        </Router>
+      </ErrorBoundary>
     </Provider>,
     document.querySelector('#root')
   )
