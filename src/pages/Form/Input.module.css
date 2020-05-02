@@ -1,0 +1,28 @@
+.Inputdiv {
+  border: 1px solid #ccc;
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: flex;
+  height: 60px;
+  align-items: center;
+}
+.Inputdiv input {
+  border: none;
+  width: 100%;
+}
+.Inputdiv input:focus {
+  outline: none;
+}
+.Inputdiv span {
+  display: inline-block;
+  margin-right: 10px;
+}
+.large {
+  height: 90px;
+}
+.middle {
+  height: 60px;
+}
+.small {
+  height: 30px;
+}

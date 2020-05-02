@@ -9,7 +9,6 @@ const mapDispatchToProps = { add ,asyncAdd};
 
 function login({datasp,add,asyncAdd,...props}){
     console.log(props);
-    
     const login = () =>{
         register({
             roleGroup:'1',
@@ -25,16 +24,19 @@ function login({datasp,add,asyncAdd,...props}){
     return(
         <div>
             我是登录页面
-            <div style={{margin:'50px'}}>
+            <div style={{margin:'50px',width:'300px'}}>
                 <CreateInput
-                    type="number"
+                    type="text"
                     defaultValue="666"
                     maxLength="6"
                     prefix="$"
+                    allowClear={true}
+                    size="middle"
                     placeholder="请输入"
                 >
-
+                    <CreateInput.Item></CreateInput.Item>
                 </CreateInput>
+               
             </div>
             {datasp}
             <Button onClick={login}>点击登录</Button>
