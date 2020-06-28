@@ -34,15 +34,15 @@ module.exports = override(
     '@': path.resolve(__dirname, 'src'),
   }),
   // 其他配置 ...,
-  addWebpackPlugin(new ProgressBarPlugin({ //打包进度条
-      complete: "blue",
-      format: `${chalk.green('Building')} [ ${chalk.green(':bar')} ] ':msg:' ${chalk.bold('(:percent)')}`,
-      clear: true
-    })
-  ),
-  addWebpackPlugin(    //打包分析插件
-    new BundleAnalyzerPlugin()
-  ),
+  // addWebpackPlugin(new ProgressBarPlugin({ //打包进度条
+  //     complete: "blue",
+  //     format: `${chalk.green('Building')} [ ${chalk.green(':bar')} ] ':msg:' ${chalk.bold('(:percent)')}`,
+  //     clear: true
+  //   })
+  // ),
+  // addWebpackPlugin(    //打包分析插件
+  //   new BundleAnalyzerPlugin()
+  // ),
   addPostcssPlugins([
     require('postcss-px-to-viewport')({
       viewportWidth: 1920, // 视窗的宽度，对应的是我们设计稿的宽度，一般是750

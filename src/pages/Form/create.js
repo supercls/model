@@ -1,17 +1,16 @@
 import React, { useEffect,useState, Fragment } from 'react'
 import style from './Input.module.css'
 import PropTypes from 'prop-types';
-import {Form,Input} from 'antd'
 import {
     CloseOutlined
   } from '@ant-design/icons';
 
   
-class Forms extends React.Component{
+class Forms extends React.Component{  //类的构造方法
     constructor(){
 
     }
-    static Item = Item
+    static Item = TextArea
     render(){
         return(
             <div>
@@ -63,12 +62,13 @@ CreateInput.propTypes = {
     type: PropTypes.string,
     maxLength: PropTypes.string
 };
-function Item(){
+function TextArea({props}){
+    console.log(props)
     return(
         <div>
             999
         </div>
     )
 }
-CreateInput.Item = Item
+CreateInput.TextArea = TextArea
 export default CreateInput
